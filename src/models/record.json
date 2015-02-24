@@ -39,6 +39,7 @@
 			"minimum": 0
 		}
 	},
+	"additionalProperties": false,
 	"required": [
 		"domain",
 		"name",
