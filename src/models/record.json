@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "DNS resource record",
+	"type": "object",
+	"properties": {
+		"domain": {
+			"description": "Domain name which this DNS resource record belongs to",
+			"type": "string",
+			"format": "hostname"
+		},
+		"service": {
+			"description": "Service name associated with this resource record, if any",
+			"type": "string"
+		},
+		"name": {
+			"description": "Name section of the subdomain for this resource record",
+			"type": "string",
+			"format": "hostname"
+		},
+		"type": {
+			"description": "Resource record type",
+			"enum": [
+				"A",
+				"AAAA",
+				"CNAME",
+				"NS",
+				"MX",
+				"SRV",
+				"TXT"
+			]
+		},
+		"data": {
+			"description": "Resource record data, e.g. IP address for A records or hostname for CNAME records",
+			"type": "string"
+		},
+		"ttl": {
+			"description": "Time-to-live in seconds, if different from the zone's default",
+			"type": "integer",
+			"minimum": 0
+		}
+	},
+	"required": [
+		"domain",
+		"name",
+		"type",
+		"data"
+	]
+}

@@ -3,10 +3,13 @@
   "name": "iwmn-dns",
   "scripts": {
     "start": "node .",
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "tv4": "^1.1.9"
   }
 }
