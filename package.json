@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "iwmn-dns",
+  "scripts": {
+    "start": "node .",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.1.0"
+  }
+}
