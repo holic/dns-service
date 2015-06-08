@@ -1,11 +1,11 @@
 var expect = require('expect.js')
 var tv4 = require('tv4')
 
-var schema = require('../fixtures/json-schema.json')
-tv4.addSchema('http://json-schema.org/draft-04/schema', schema)
+var schema = require('../../src/schemas/json-schema.json')
+tv4.addSchema(schema.$schema, schema)
 
 describe('DNS resource record model', function () {
-	var model = require('../../src/models/record.json')
+	var model = require('../../src/schemas/record.json')
 
 	it('is a valid JSON schema', function () {
 		var result = tv4.validateMultiple(model, schema)
