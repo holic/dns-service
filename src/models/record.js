@@ -1,10 +1,12 @@
-var tv4 = require('tv4')
+var validator = require('is-my-json-valid')
 var schema = require('../schemas/record.json')
+
+var validate = validator(schema)
 
 function Record (data) {
 	if (data) {
-		var result = tv4.validateResult(data, schema)
-		if (result.error) throw new Error('Data is not valid: ' + result.error.message)
+		var result = validate(data)
+		if (!validate(data)) throw new Error('Data is not valid: ' + validate.errors)
 
 		for (var k in data) {
 			if (data.hasOwnProperty(k)) {
